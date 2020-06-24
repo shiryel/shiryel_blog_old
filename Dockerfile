@@ -23,6 +23,7 @@ RUN mix local.hex --force \
 # Deployment Stage #
 ####################
 FROM alpine as app
+RUN apk add --no-cache openssl ncurses-libs
 
 WORKDIR /app
 RUN chown nobody:nobody /app
