@@ -37,7 +37,7 @@ jobs:
     - name: AWS - Exclude last container if exists
       run: |
            ssh -q -o "StrictHostKeyChecking no" -i temp.pem ${{ secrets.AWS_SSH }} \
-             docker rm -f webrtc_server
+             docker rm -f shiryel_blog
     - name: AWS - Get and run new Image
       if: success() || failure()
       run: |
@@ -45,8 +45,8 @@ jobs:
           docker pull docker.pkg.github.com/shiryel/shiryel_blog/shiryel_blog:latest
         ssh -o "StrictHostKeyChecking no" -i temp.pem ${{ secrets.AWS_SSH }} \
           docker run -d \
-            --name webrtc_server \
-            --hostname webrtc_server \
+            --name shiryel_blog \
+            --hostname shiryel_blog \
             --publish 5002:80 \
             --restart=always \
             docker.pkg.github.com/shiryel/shiryel_blog/shiryel_blog:latest
