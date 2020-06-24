@@ -21,7 +21,7 @@ FROM erlang:alpine
 
 COPY --from=build /export/ /opt/
 
-EXPOSE 4000
+EXPOSE 80
 
 ENTRYPOINT ["/opt/app/bin/shiryel_blog"]
 CMD ["start"]
