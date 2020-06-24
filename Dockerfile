@@ -13,7 +13,8 @@ RUN apk add --update npm
 RUN mix local.hex --force \
     && mix local.rebar --force \
     && mix deps.get \
-    && (cd assets && npm i) \
+    && npm install --prefix ./assets \
+    && npm run deploy --prefix ./assets \
     && mix phx.digest \
     && mkdir /export \
     && mix release --path /export/app
@@ -21,11 +22,15 @@ RUN mix local.hex --force \
 ####################
 # Deployment Stage #
 ####################
-FROM erlang:alpine
+FROM alpine as app
 
-COPY --from=build /export/ /opt/
+WORKDIR /app
+RUN chown nobody:nobody /app
+USER nobody:nobody
 
-EXPOSE 80
+COPY --from=build --chown=nobody:nobody /export/app/_build/prod/rel/shiryel_blog ./
 
-ENTRYPOINT ["/opt/app/bin/shiryel_blog"]
+EXPOSE 4000
+
+ENTRYPOINT ["bin/shiryel_blog"]
 CMD ["start"]
