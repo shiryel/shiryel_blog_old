@@ -21,7 +21,7 @@ jobs:
            docker build \
            --build-arg SECRET_KEY_BASE=${{ secrets.SECRET_KEY_BASE }} \
            --tag docker.pkg.github.com/shiryel/shiryel_blog/shiryel_blog:latest \
-           wr_server
+           .
     - name: Docker - Push
       run: docker push docker.pkg.github.com/shiryel/shiryel_blog/shiryel_blog:latest
 
