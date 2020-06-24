@@ -8,9 +8,13 @@ COPY . .
 ARG MIX_ENV="prod"
 ARG SECRET_KEY_BASE
 
+RUN apk add --update npm
+
 RUN mix local.hex --force \
     && mix local.rebar --force \
     && mix deps.get \
+    && (cd assets && npm i) \
+    && mix phx.digest \
     && mkdir /export \
     && mix release --path /export/app
 
