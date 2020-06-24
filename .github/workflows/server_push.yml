@@ -47,7 +47,7 @@ jobs:
           docker run -d \
             --name shiryel_blog \
             --hostname shiryel_blog \
-            --publish 5002:80 \
+            --publish 5002:4000 \
             --restart=always \
             docker.pkg.github.com/shiryel/shiryel_blog/shiryel_blog:latest
     - name: AWS - Clear Docker Login
