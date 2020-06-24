@@ -28,7 +28,7 @@ WORKDIR /app
 RUN chown nobody:nobody /app
 USER nobody:nobody
 
-COPY --from=build --chown=nobody:nobody /export/opt/app ./
+COPY --from=build --chown=nobody:nobody /export/app ./
 
 EXPOSE 4000
 
