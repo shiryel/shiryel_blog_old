@@ -32,5 +32,5 @@ COPY --from=build --chown=nobody:nobody /export/opt/app ./
 
 EXPOSE 4000
 
-ENTRYPOINT [".bin/shiryel_blog"]
+ENTRYPOINT ["bin/shiryel_blog"]
 CMD ["start"]
