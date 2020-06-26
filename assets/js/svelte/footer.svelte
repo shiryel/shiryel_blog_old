@@ -17,7 +17,7 @@
     font-size: 0.7em;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 1000px) {
     div {
       position: fixed;
       border-top-left-radius: 10px;

@@ -42,7 +42,7 @@
     border-bottom: 1px solid black;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 1000px) {
     main {
       font-size: 1.2rem;
     }

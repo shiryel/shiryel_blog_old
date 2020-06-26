@@ -20,7 +20,7 @@
     display: none;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 1000px) {
     p {
       display: block;
       position: fixed;

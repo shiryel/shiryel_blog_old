@@ -25,7 +25,7 @@
     width: 100%;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 1000px) {
     .name {
       width: 950px;
     }

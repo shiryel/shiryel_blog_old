@@ -59,7 +59,7 @@
     float: right;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 1000px) {
     button {
       width: 470px;
     }
