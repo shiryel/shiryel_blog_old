@@ -4,13 +4,14 @@
   import "highlight.js/styles/agate.css";
 
   export let post = {};
+  export let back_button = "Back";
 
-  const converter = new showdown.Converter({extensions: [showdownHighlight]});
+  const converter = new showdown.Converter({ extensions: [showdownHighlight] });
 
   let html = "loading...";
   $: fetch(`/post-files/${post.post_id}`)
-    .then(response => _chapter_exists_v(response))
-    .then(data => (html = converter.makeHtml(data)));
+    .then((response) => _chapter_exists_v(response))
+    .then((data) => (html = converter.makeHtml(data)));
   function _chapter_exists_v(res) {
     if (res.ok) {
       return res.text();
@@ -23,12 +24,18 @@
 </script>
 
 <style>
+  section {
+    display: flex;
+    justify-content: center;
+  }
+
   article {
     text-align: left;
     max-width: 950px;
     margin: 0 auto;
     font-size: 1rem;
-    padding: 12px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
   }
 
   .titulo {
@@ -42,15 +49,26 @@
     border-bottom: 1px solid black;
   }
 
+  button {
+    background-color: #c2c2c2;
+    width: 200px;
+    margin: 20px;
+  }
+
   @media (min-width: 1000px) {
-    main {
-      font-size: 1.2rem;
-    }
   }
 </style>
 
+<section>
+  <button onclick="location.href='/'">Home</button>
+</section>
 <article>
   <h2 class="titulo">{post.name}</h2>
   <h1 class="description">{post.description}</h1>
-  {@html html}
+  <div>
+    {@html html}
+  </div>
 </article>
+<section>
+  <button onclick="location.href='/'">Home</button>
+</section>

@@ -1,5 +1,6 @@
 <section>
   <%= svelte "darkmode" %>
+  <%= svelte "shiryel_den" %>
   <%= svelte "home/welcome", %{info_text: gettext("A small room where I (maybe) drop some useful information")} %>
   <%= svelte "home/card_list", %{name: gettext("Featured"), cards: @posts} %>
   <%= svelte "home/card_list", %{name: gettext("Last Posts"), cards: @posts}%>
