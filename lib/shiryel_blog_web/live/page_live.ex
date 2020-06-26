@@ -3,7 +3,7 @@ defmodule ShiryelBlogWeb.PageLive do
 
   # WHILE NOT IN DB:
   @posts [
-    %{post_id: "how-to-add-svelte-on-elixir-phoenix-framework.md",
+    %{post_id: "how-to-add-svelte-on-elixir-phoenix-framework",
       name: "Svelte S2 Phoenix",
       description: "How to add Svelte on Elixir Phoenix Framework",
       tags: ["elixir", "svelte", "tricks and tips"]

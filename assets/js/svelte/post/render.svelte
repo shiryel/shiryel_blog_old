@@ -4,7 +4,6 @@
   import "highlight.js/styles/agate.css";
 
   export let post = {};
-  export let back_button = "Back";
 
   const converter = new showdown.Converter({ extensions: [showdownHighlight] });
 

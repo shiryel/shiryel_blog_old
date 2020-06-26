@@ -3,35 +3,27 @@
 </script>
 
 <style>
-  footer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-top: 30px;
+  a {
+    background: #353535;
+    color: white;
+    text-decoration: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0.5em;
+    left: 0;
+    bottom: 0;
   }
 
-  div {
-    width: 1000px;
-    background-color: #aeaeae;
-    font-size: 0.7em;
-  }
-
-  @media (min-width: 1000px) {
-    div {
+  @media (min-width: 1575px) {
+    a {
       position: fixed;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      bottom: 0;
-      font-size: 0.9em;
+      margin-left: 12em;
     }
   }
 </style>
 
 <footer>
-  <div>
     <a href="https://github.com/shiryel" target="_blank">
-      {'> My Github <'}
+      {'Github'}
     </a>
-  </div>
 </footer>
