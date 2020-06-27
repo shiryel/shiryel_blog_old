@@ -1,5 +1,7 @@
-defmodule ShiryelBlogWeb.PageLive do
-  use ShiryelBlogWeb, :live_view
+defmodule ShiryelBlogWeb.SitemapController do
+  use ShiryelBlogWeb, :controller
+
+  plug :put_root_layout, false
 
   # WHILE NOT IN DB:
   @posts [
@@ -9,11 +11,10 @@ defmodule ShiryelBlogWeb.PageLive do
       tags: ["elixir", "svelte", "tricks and tips"]
     }
   ]
-  # On posts after add DB:
-  # <lastmod><%= format_date(property.updated_at) %></lastmod>
-  
-  @impl true
-  def mount(_params, _session, socket) do
-    {:ok, assign(socket, posts: @posts)}
+
+  def index(conn, _params) do
+    conn
+    |> put_resp_content_type("text/xml")
+    |> render("index.xml", posts: @posts)
   end
 end

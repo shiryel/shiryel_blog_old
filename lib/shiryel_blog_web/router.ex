@@ -17,6 +17,7 @@ defmodule ShiryelBlogWeb.Router do
   scope "/", ShiryelBlogWeb do
     pipe_through :browser
 
+    get "/sitemap.xml", SitemapController, :index
     live "/", PageLive, :index
     live "/post/:post_id", PostLive, :index
   end
