@@ -1,5 +1,5 @@
 # Shiryel's Blog
-![Server Push CD](https://github.com/shiryel/shiryel_blog/workflows/Server%20Push%20CD/badge.svg)
+![Server Push CD](https://github.com/shiryel/shiryel_blog_old/workflows/Server%20Push%20CD/badge.svg)
 
 www.blog.shiryel.com
 
